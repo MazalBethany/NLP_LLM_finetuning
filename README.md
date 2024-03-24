@@ -38,18 +38,18 @@ Hyperparameter changes used were:
 ### Llama2-Alpaca
 | Config | BLEU | ROUGE-L | BERTScore | Human  |
 |----------|----------|----------|----------|-------|
-| top_k_50_num_beams_1_temp_0.0 | 0.104250 | 0.234846 | 0.835651 |   |
-| top_k_50_num_beams_1_temp_0.5 | 0.093281 | 0.224190 | 0.834736 |   |
-| top_k_10_num_beams_1_temp_0.8 | 0.088869 | 0.229596 | 0.842532 |   |
-| top_k_40_num_beams_1_temp_0.8 | 0.087204 | 0.224284 | 0.843406 |   |
-| top_k_50_num_beams_2_temp_0.8 | 0.098968 | 0.234223 | 0.836924 |   |
-| top_k_50_num_beams_1_temp_0.25 | 0.102562 | 0.234169 | 0.834929 |   |
-| top_k_50_num_beams_5_temp_0.8 | 0.113437 | 0.254784 | 0.834861 |  |
-| top_k_50_num_beams_3_temp_0.8 | 0.104220 | 0.243178 | 0.837395 |  |
-| top_k_75_num_beams_1_temp_0.8 | 0.085980 | 0.221993 | 0.844428 |  |
-| top_k_25_num_beams_1_temp_0.8 | 0.086934 | 0.222303 | 0.843334 |  |
-| top_k_50_num_beams_1_temp_1.0 | 0.071234 | 0.209478 | 0.841053 |  |
-| top_k_50_num_beams_10_temp_0.8 | 0.112773 | 0.240020 | 0.782440 |  |
+| top_k_50_num_beams_1_temp_0.0 | 0.105 | 0.235 | 0.834 |   | 
+| top_k_50_num_beams_1_temp_0.5 | 0.093 | 0.225 | 0.833 |   |
+| top_k_10_num_beams_1_temp_0.8 | 0.088 | 0.229 | 0.841 |   |
+| top_k_40_num_beams_1_temp_0.8 | 0.089 | 0.224 | 0.844 |   |
+| top_k_50_num_beams_2_temp_0.8 | 0.098 | 0.232 | 0.835 |   |
+| top_k_50_num_beams_1_temp_0.25 | 0.103 | 0.232 | 0.839 |   |
+| top_k_50_num_beams_5_temp_0.8 | 0.113 | 0.255 | 0.833 |  |
+| top_k_50_num_beams_3_temp_0.8 | 0.104 | 0.243 | 0.838 |  |
+| top_k_75_num_beams_1_temp_0.8 | 0.086 | 0.223 | 0.843 |  |
+| top_k_25_num_beams_1_temp_0.8 | 0.087 | 0.222 | 0.843 |  |
+| top_k_50_num_beams_1_temp_1.0 | 0.071 | 0.209 | 0.842 |  |
+| top_k_50_num_beams_10_temp_0.8 | 0.113 | 0.240 | 0.783 |  |
 
 
 
@@ -58,33 +58,33 @@ Hyperparameter changes used were:
 ### Mistral-Alpaca
 | Config | BLEU | ROUGE-L | BERTScore | Human |
 |----------|----------|----------|----------|---------|
-| top_k_50_num_beams_1_temp_0.25 | 0.094395 | 0.223659 | 0.852543 |  |
-| top_k_50_num_beams_1_temp_1.0 | 0.073075 | 0.209348 | 0.856090 |  |
-| top_k_50_num_beams_1_temp_0.5 | 0.090261 | 0.215826 | 0.848454 |  |
-| top_k_40_num_beams_1_temp_0.8 | 0.085135 | 0.221411 | 0.845139 |  |
-| top_k_25_num_beams_1_temp_0.8 | 0.087344 | 0.212703 | 0.846659 |  |
-| top_k_50_num_beams_10_temp_0.8 | 0.126070 | 0.332443 | 0.870765 |  |
-| top_k_50_num_beams_1_temp_0.0 | 0.094592 | 0.229714 | 0.853408 |   |
-| top_k_75_num_beams_1_temp_0.8 | 0.086474 | 0.209671 | 0.847688 |  |
-| top_k_10_num_beams_1_temp_0.8 | 0.086329 | 0.224557 | 0.851953 |   |
-| top_k_50_num_beams_3_temp_0.8 | 0.119682 | 0.294829 | 0.868226 |   |
-| top_k_50_num_beams_5_temp_0.8 | 0.121952 | 0.313187 | 0.871245 |  |
-| top_k_50_num_beams_2_temp_0.8 | 0.112313 | 0.282406 | 0.865394 |  |
+| top_k_50_num_beams_1_temp_0.25 | 0.094 | 0.225 | 0.853 |  |
+| top_k_50_num_beams_1_temp_1.0 | 0.073 | 0.210 | 0.855 |  |
+| top_k_50_num_beams_1_temp_0.5 | 0.091 | 0.214 | 0.848 |  |
+| top_k_40_num_beams_1_temp_0.8 | 0.083 | 0.221 | 0.844 |  |
+| top_k_25_num_beams_1_temp_0.8 | 0.087 | 0.212 | 0.847 |  |
+| top_k_50_num_beams_10_temp_0.8 | 0.126 | 0.332 | 0.871 |  |
+| top_k_50_num_beams_1_temp_0.0 | 0.096 | 0.231 | 0.854 |   |
+| top_k_75_num_beams_1_temp_0.8 | 0.086 | 0.209 | 0.846 |  |
+| top_k_10_num_beams_1_temp_0.8 | 0.085 | 0.223 | 0.851 |   |
+| top_k_50_num_beams_3_temp_0.8 | 0.120 | 0.294 | 0.869 |   |
+| top_k_50_num_beams_5_temp_0.8 | 0.121 | 0.314 | 0.870 |  |
+| top_k_50_num_beams_2_temp_0.8 | 0.113 | 0.282 | 0.864 |  |
 
 ### Phi2-Alpaca
 | Config | BLEU | ROUGE-L | BERTScore | Human |
 |----------|----------|----------|----------|---------|
-| top_k_50_num_beams_1_temp_1.0 | 0.032650 | 0.139256 | 0.778045 |  |
-| top_k_25_num_beams_1_temp_0.8 | 0.040128 | 0.152024 | 0.776562 |   |
-| top_k_50_num_beams_3_temp_0.8 | 0.042344 | 0.153522 | 0.768393 |  |
-| top_k_50_num_beams_10_temp_0.8 | 0.059236 | 0.182520 | 0.775320 |   |
-| top_k_50_num_beams_2_temp_0.8 | 0.041136 | 0.149731 | 0.765922 |  |
-| top_k_50_num_beams_5_temp_0.8 | 0.049616 | 0.169586 | 0.771494 |  |
-| top_k_40_num_beams_1_temp_0.8 | 0.035122 | 0.146049 | 0.774651 |  |
-| top_k_10_num_beams_1_temp_0.8 | 0.037112 | 0.150133 | 0.775434 | |
-| top_k_50_num_beams_1_temp_0.5 | 0.036085 | 0.146374 | 0.767870 |   |
-| top_k_75_num_beams_1_temp_0.8 | 0.032411 | 0.143313 | 0.769573 |  |
-| top_k_50_num_beams_1_temp_0.25 | 0.037701 | 0.144081 | 0.764685 |  |
+| top_k_50_num_beams_1_temp_1.0 | 0.033 | 0.140 | 0.778 |  |
+| top_k_25_num_beams_1_temp_0.8 | 0.041 | 0.152 | 0.775 |   |
+| top_k_50_num_beams_3_temp_0.8 | 0.042 | 0.153 | 0.768 |  |
+| top_k_50_num_beams_10_temp_0.8 | 0.059 | 0.183 | 0.774 |   |
+| top_k_50_num_beams_2_temp_0.8 | 0.042 | 0.150 | 0.763 |  |
+| top_k_50_num_beams_5_temp_0.8 | 0.049 | 0.170 | 0.771 |  |
+| top_k_40_num_beams_1_temp_0.8 | 0.035 | 0.146 | 0.773 |  |
+| top_k_10_num_beams_1_temp_0.8 | 0.037 | 0.151 | 0.775 | |
+| top_k_50_num_beams_1_temp_0.5 | 0.036 | 0.147 | 0.766 |   |
+| top_k_75_num_beams_1_temp_0.8 | 0.033 | 0.143 | 0.769 |  |
+| top_k_50_num_beams_1_temp_0.25 | 0.037 | 0.144 | 0.763 |  |
 
 ## Discussion Section
 
