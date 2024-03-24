@@ -1,16 +1,15 @@
 ## Create Environment
 ```
-conda create -n assignment_1c python=3.10 -y
-conda activate assignment_1c
+conda create -n LLM_finetuning_assignment python=3.10 -y
+conda activate LLM_finetuning_assignment
 conda install pytorch-cuda=12.1 pytorch cudatoolkit xformers -c pytorch -c nvidia -c xformers
 pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
 pip install --no-deps trl peft accelerate bitsandbytes
 pip install einops
 pip install vllm==0.2.7
-pip install sacrebleu rogue_score bert_score
+pip install sacrebleu rouge_score bert_score
 ```
 
-Alternatively, install using `conda env create -f environment.yaml`
 
 ## Some notes
  - The unsloth library is used for finetuning llama and mistral. It uses QLoRA (Quantized Low Rank Adaptation) behind the scenes and significantly reducing training time and VRAM usage.
