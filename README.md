@@ -11,15 +11,19 @@ pip install sacrebleu rouge_score bert_score
 ```
 
 
-## Some notes
- - The unsloth library is used for finetuning llama and mistral. It uses QLoRA (Quantized Low Rank Adaptation) behind the scenes and significantly reducing training time and VRAM usage.
- - PEFT was used to finetune Phi-2, this method also uses LoRA
- - These PEFT methods only train a much smaller set of parameters to reduce VRAM footprint and speed up training time
 
-Using these methods do have the potential to reduce performance in the final model (compared to full finetuning), but typically this reduction is negligible or in some cases using these methods actually improve performance.
 
-## Dataset Preprocessing
-Create train/test set from Alpaca data (as it does not originally have a test split, which we need for evaluations):
+Steps:
+
+1. Create train/test split on alpaca dataset: python data_splits.py
+2. Fine-tune models on alpaca data using the train split:
+        python finetune_llama.py
+        python finetune_mistral.py
+        python finetune_phi.py
+3. Run inference on the fine-tuned models and save the results:
+        python llama_infer.py
+        python mistral_infer.py
+        python phi_infer.py
 
 `python split_dataset.py`
 
