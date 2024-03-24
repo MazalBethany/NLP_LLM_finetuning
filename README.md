@@ -15,43 +15,25 @@ pip install sacrebleu rouge_score bert_score
 
 Steps:
 
-1. Create train/test split on alpaca dataset: python data_splits.py
+1. Create train/test split on alpaca dataset and save the data splits:
+        python data_splits.py
 2. Fine-tune models on alpaca data using the train split:
         python finetune_llama.py
         python finetune_mistral.py
         python finetune_phi.py
-3. Run inference on the fine-tuned models and save the results:
-        python llama_infer.py
-        python mistral_infer.py
-        python phi_infer.py
+3. Run inference on the three fine-tuned models with different hyperparameters conduct automatic evaluations:
+        sh hyperparameter_experiments.sh
 
-`python split_dataset.py`
-
-This will create a folder `./alpaca_data` which stores the train and test split that is created.
-
-## Fine-Tuning Pre-trained LLMs
-
-Run `python finetuning_scripts/finetune_<MODEL-NAME>.py` to perform finetuning of the LLMs. 
-
-Replace `<MODEL-NAME>` with one of `llama`, `mistral` or `phi`. Models will be saved in `./finetuned_models`
-
-## Collect LLM responses and perform metric evaluations
-
-Run `sh hyperparameter_experiments.sh`
-
-This shell script will use 4 different hyperparameter configurations for model generation for each of `top_k`, `num_beams`, and `temperature` (for a total of 12 configurations). Then each configuration will be applied to each of the 3 LLMs: Llama2-7B, Mistral-7B, and Phi-2-2.7B.
 
 Hyperparameter changes used were: 
 - `[10, 25, 40, 75]` for `top_k`
 - `[2, 3, 5, 10]` for `num_beams`
 - `[0.0, 0.25, 0.5, 1.0]` for `temperature`
 
-For each configuration only one of the above is changed and the others are set to default values of `top_k=50`, `num_beams=1`, `temperature=0.8`. Note that `num_beams=1` essentially means no beam search, since beam search and random sampling are not compatible.
 
-This shell script will run all the experiments in a pipeline: Setting the generation hyperparameters, collecting LLM generations and saving them to `./llm_responses`, cleaning output, and finally computing the evaluation metrics which are saved to `./eval_results`.
 
 ## Results
-Config describes the generation hyperparameters. (CodeBLEU eval metrics ignored as it is not relevant for the text dataset/task)
+
 
 ### Llama2-Alpaca
 | Config | BLEU | ROUGE-L | BERTScore | Human  |
@@ -108,23 +90,9 @@ Config describes the generation hyperparameters. (CodeBLEU eval metrics ignored 
 
 **Write a discussion explaining the comparison between two models. Moreover, compare the metrics and discuss which metrics are more appropriate compared to human evaluation.**
 
-Mistral-Alpaca generally outperforms both Llama2-Alpaca and Phi2-Alpaca across all metrics. Llama2-Alpaca shows the second-best performance, while Phi2-Alpaca is behind the other two models. BLEU and ROUGE-L focus on n-gram overlap and are more sensitive to exact word matches, while BERTScore captures semantic similarity using contextualized embeddings. These automated metrics, especially BLEU and ROUGE-L, may not be comprehensive in demonstrating the quality and correctness of responses, but the BERTScore and human evaluations also support the ranking of the LLMs.
+Discussion
 
 
 **Write another discussion explaining the how the hyperparameters effect on the different metrics of LLaMA, Mistral, Phi-2.**
 
- - For Llama2-Alpaca, increasing the number of beams (num_beams) tends to improve the BLEU and ROUGE-L scores, with the highest scores achieved when num_beams is set to 5 or 10. However, the BERTScore slightly decreases with higher num_beams values. Varying the temperature or the top_k value does not show a consistent trend in the metrics.
-
- - In the case of Mistral-Alpaca, higher num_beams values (3, 5, and 10) result in significant improvements across all three metrics compared to the default setting (num_beams=1). Increasing the temperature leads to lower BLEU and ROUGE-L scores, while the BERTScore remains relatively stable. The top_k value does not have a notable impact on the metrics.
-
- - For Phi2-Alpaca, increasing the num_beams value generally improves the BLEU and ROUGE-L scores, with the highest scores obtained when num_beams is set to 10. However, the BERTScore does not show a clear trend with varying num_beams. Changing the temperature or the top_k value does not result in significant differences in the metrics.
-
- Overall, the effect of hyperparameters on the metrics varies across the three models. Mistral-Alpaca seems to benefit the most from increasing the num_beams value, while Llama2-Alpaca and Phi2-Alpaca show some improvements but to a lesser extent. The impact of temperature and top_k is less pronounced and inconsistent across the models.
-
-
-## References and Useful Resources Used
-1. [unsloth](https://github.com/unslothai/unsloth) library for faster finetuning with less VRAM footprint (via QLoRA)
-
-2. Supervised fine-tuning trainer to streamline finetuning process, [SFTTrainer](https://huggingface.co/docs/trl/en/sft_trainer)
-
-3. [vLLM](https://github.com/vllm-project/vllm) for fast and memory-efficient inferencing
+Discussion
